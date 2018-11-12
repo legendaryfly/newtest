@@ -1,5 +1,5 @@
 FROM java:8-jre
-ADD newtest.jar /opt/edobee-app-api/
+ADD /var/lib/jenkins/workspace/newtest/target/newtest.jar /opt/edobee-app-api/
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 ENV TZ "Asia/Shanghai"
 WORKDIR /opt/edobee-app-api/
