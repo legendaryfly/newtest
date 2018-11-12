@@ -1,6 +1,6 @@
 FROM java:8-jre
-ADD /var/lib/jenkins/workspace/newtest/target/newtest.jar /opt/edobee-app-api/
+VOLUME /tmp
+ADD newtest.jar newtest.jar
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 ENV TZ "Asia/Shanghai"
-WORKDIR /opt/edobee-app-api/
-CMD ["java","-jar", "newtest.jar"]
+ENTRYPOINT ["java","-jar", "/newtest.jar"]
