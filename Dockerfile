@@ -1,6 +1,6 @@
 FROM java:8-jre
-VOLUME /tmp
-ADD ./newtest.jar newtest.jar
+ADD target/newtest.jar /opt/edobee-app-api/
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 ENV TZ "Asia/Shanghai"
-ENTRYPOINT ["java","-jar", "/newtest.jar"]
+WORKDIR /opt/edobee-app-api/
+CMD ["java","-jar", "newtest.jar"]
