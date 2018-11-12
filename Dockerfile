@@ -1,6 +1,6 @@
 FROM java:8-jre
-ADD test.jar /opt/test/
+ADD test.jar /opt/edobee-app-api/
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 ENV TZ "Asia/Shanghai"
-WORKDIR /opt/test/
+WORKDIR /opt/edobee-app-api/
 CMD ["java","-jar", "test.jar"]
